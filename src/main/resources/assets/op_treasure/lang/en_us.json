@@ -1,0 +1,4 @@
+{
+  "block.op_treasure.op_treasure_chest": "OP Treasure Chest",
+  "commands.op_treasure.give.success": "Gave %s OP Treasure Chest item(s) to %s"
+}

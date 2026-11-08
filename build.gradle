@@ -1,0 +1,32 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+group = project.maven_group
+version = project.mod_version
+
+base { archivesName = project.archives_base_name }
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+minecraft {
+    mappings channel: 'official', version: project.minecraft_version
+    copyIdeResources = true
+    runs {
+        client { workingDirectory project.file('run'); mods { op_treasure { source sourceSets.main } } }
+        server { workingDirectory project.file('run'); mods { op_treasure { source sourceSets.main } } }
+    }
+}
+
+repositories { }
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
+}
+
+jar { manifest { attributes(['Specification-Title': 'op_treasure', 'Specification-Vendor': 'EnderDevelopment', 'Specification-Version': '1', 'Implementation-Title': project.name, 'Implementation-Version': project.version]) } }
+
+publishing { publications { register('mavenJava', MavenPublication) { from components.java } } repositories { } }

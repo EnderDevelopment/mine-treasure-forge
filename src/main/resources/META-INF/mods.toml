@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="op_treasure"
+version="${file.jarVersion}"
+displayName="OP Treasure"
+authors="EnderDevelopment"
+description='''Adds an overpowered treasure chest for Minecraft 1.20.1.'''
+
+[[dependencies.op_treasure]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.op_treasure]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
